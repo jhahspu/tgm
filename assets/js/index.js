@@ -61,18 +61,18 @@ document.querySelector('#show-consent').addEventListener('click', () => {
 
 let cardsCount = 0;
 if (window.innerWidth < 768) {
-  for (let i=0; i<6; i++) {
+  for (let i=0; i<12; i++) {
     document.querySelector('.glide__slides').innerHTML += `<div class="glide__slide two"></div>`;
     cardsCount = 2;
   }
 } else {
-  for (let i=0; i<3; i++) {
+  for (let i=0; i<6; i++) {
     document.querySelector('.glide__slides').innerHTML += `<div class="glide__slide four"></div>`;
     cardsCount = 4;
   }
 }
 
-const gl = new Glide('.glide', { autoplay: 10000, perView: 1 });
+const gl = new Glide('.glide', { autoplay: 12000, perView: 1 });
 gl.mount();
 
 const randomTitles = async () => {
@@ -82,6 +82,7 @@ const randomTitles = async () => {
 }
 
 const updateSlides = (data) => {
+  gl.update({ startAt: 0 });
   let iter = 0;
   slides.forEach(slide => {
     slide.innerHTML = '';
@@ -91,7 +92,7 @@ const updateSlides = (data) => {
       `<div class="card-wrapper">
         <div class="card-content">
           <div class="poster">
-            <img src="./assets/img/posters/webp/${data[iter]['poster']}.webp" alt="">
+            <img loading="lazy" src="./assets/img/posters/webp/${data[iter]['poster']}.webp" alt="">
           </div>
           <h3 title="${data[iter]['title']} (${parseInt(data[iter]['release_date'])})">${data[iter]['title']}</h3>
           <button class="btn" onclick="showTrailer('${trailers[0]}')">Trailer</button>

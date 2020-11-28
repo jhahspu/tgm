@@ -59,6 +59,15 @@ $box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.4);
 
 h1, h2, h3 { font-weight: 300; line-height: 1; }
 
+svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  path {
+    transition: fill 0.2s ease-in-out;
+    fill: rgba(255, 255, 255, 0.6);
+  }
+}
+
 .spacing > * + * {
   margin-top: 1.5rem;
 }
@@ -177,6 +186,14 @@ main {
               margin-right: 0.5rem;
             }
           }
+        }
+      }
+    }
+
+    .glide__arrow:hover {
+      svg {
+        path {
+          fill: rgba(255, 255, 255, 0.9);
         }
       }
     }
