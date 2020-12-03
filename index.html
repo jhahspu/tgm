@@ -16,16 +16,16 @@
   <link rel="shortcut icon" href="./assets/img/ico.png" type="image/png">
   <link rel="stylesheet" href="./assets/css/glide.theme.min.css">
   <link rel="stylesheet" href="./assets/css/glide.core.min.css">
-  
   <link rel="stylesheet" href="./assets/css/style.min.css">
   <title>TGM | Best collection of top rated movie titles.</title>
 </head>
 <body>
+
 <main>
   <div class="head spacing">
     <h1>Top Good Movies</h1>
     <h2>Best collection of top rated movie titles.</h2>
-    <button id="rt" class="btn acc">Shuffle</button>
+    <button id="shuffle" class="btn acc">Shuffle</button>
   </div>
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
@@ -46,18 +46,17 @@
   </div>
 </main>
 
-<div class="overlay"></div>
+<div id="overlay" class="overlay"></div>
 
-<div class="cookies">
+<button id="show-consent" class="btn">Cookies</button>
+<div class="cookies hidden">
   <p>This website uses third party Youtube & Google cookies. In order to watch youtube trailers on this site you have to accept Google's privacy policy. If you want to learn more about your online privacy, click <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">here</a>.</p>
   <button id="accept-cookies" class="btn acc">Accept</button>
   <button id="reject-cookies" class="btn danger">Reject</button>
   <button id="hide-consent" class="btn info">Hide</button>
 </div>
 
-<button id="show-consent" class="btn hidden">Cookies</button>
-
 <script src="./assets/js/glide.min.js"></script>
-<script src="./assets/js/index.js"></script>
+<script src="./assets/js/index.js" type="module"></script>
 </body>
 </html>

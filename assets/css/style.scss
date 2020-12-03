@@ -59,9 +59,12 @@ $box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.4);
 
 h1, h2, h3 { font-weight: 300; line-height: 1; }
 
+img { max-width: 100%; }
+
 svg {
   width: 1.5rem;
   height: 1.5rem;
+  pointer-events: none;
   path {
     transition: fill 0.2s ease-in-out;
     fill: rgba(255, 255, 255, 0.6);
@@ -139,39 +142,43 @@ main {
         gap: 1rem;
       }
 
-      .card-wrapper {
+      .mvc {
+        background-color: $main-1;
+        border-radius: 4px;
+        border: $border;
+        box-shadow: $box-shadow;
+        overflow: hidden;
+        text-align: center;
 
-        .card-content {
-          background-color: $main-1;
-          border-radius: 4px;
-          border: $border;
-          box-shadow: $box-shadow;
+        .mvp {
+          position: relative;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        h3{
+          height: 3.4rem;
+          padding: 0.5rem 0.25rem;
           overflow: hidden;
-          text-align: center;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          word-break: break-word;
+          line-height: 1.4rem;
+          font-size: 1.1rem;
+        }
 
-          .poster {
-            position: relative;
+        .mvb {
+          margin: 1rem 0 0.6rem;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-wrap: wrap;
 
-            img {
-              width: 100%;
-            }
-          }
-
-          h3{
-            height: 3.4rem;
-            padding: 0.5rem 0.25rem;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            text-overflow: ellipsis;
-            word-break: break-word;
-            line-height: 1.4rem;
-            font-size: 1.1rem;
-          }
-
-          .btn {
-            margin-bottom: 1rem;
+          .vt {
 
             &::before {
               content: '';
@@ -184,6 +191,16 @@ main {
               vertical-align: middle;
               margin-top: -2px;
               margin-right: 0.5rem;
+            }
+          }
+
+          .od {
+            padding: 0;
+            
+            svg {
+              width: 2rem;
+              height: 2rem;
+              pointer-events: none;
             }
           }
         }
@@ -218,7 +235,11 @@ main {
     pointer-events: all;
   }
 
-  .trailer {
+  .overlay-close {
+    cursor: pointer;
+  }
+
+  .overlay-trailer {
     @include container();
   
     .iframe-container {
@@ -226,7 +247,6 @@ main {
       width: 100%;
       margin: 0 auto;
       padding-bottom: 56.25%;
-      border: $border;
       border-radius: 4px;
       overflow: hidden;
 
@@ -241,6 +261,57 @@ main {
       }
       
     }
+  }
+
+  .overlay-details {
+    @include container();
+
+    .mdetails {
+      display: grid;
+      grid-template-columns: 2fr 6fr;
+      box-shadow: $box-shadow;
+
+      .mp {
+        display: grid;
+        place-content: center;
+      }
+      
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+
+        .mp {
+          display: none;
+          pointer-events: none;
+        }
+      }
+
+      .md {
+        background-color: $main-1;
+        h2, h3, p, a {
+          padding: 1rem;
+        }
+        h2 {
+          border-bottom: $border;
+        }
+        h3 {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        p {
+          padding-top: 0;
+        }
+        a {
+          display: inline-block;
+          padding-top: 0;
+          svg {
+            width: 5rem;
+            height: auto;
+          }
+        }
+      }
+    }
+
   }
 
 }
