@@ -1,0 +1,20 @@
+{
+  "name": "Top Good Movies",
+  "short_name": "TGM",
+  "start_url": ".",
+  "display": "standalone",
+  "background-color": "#0f100f",
+  "description": "Best Collection Of Top Rated Movie Titles",
+  "icons": [
+    {
+      "src": "assets/img/ico_96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/ico_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

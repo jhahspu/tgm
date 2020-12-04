@@ -1,4 +1,4 @@
 ### Top Good Movies
 
-version #8 for https://topgoodmovies.com
+#8 iteration of https://topgoodmovies.com
 

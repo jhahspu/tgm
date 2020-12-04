@@ -90,7 +90,21 @@ window.addEventListener('load', () => {
       updateSlides(res);
     });
   }
+  registerSW();
 });
+
+
+
+// Service Worker
+const registerSW = async () => {
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('./assets/js/sw.js');
+    } catch(e) {
+      console.log('Service Worker registration failed', e);
+    }
+  }
+}
 
 
 
