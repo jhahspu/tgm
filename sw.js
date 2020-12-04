@@ -1,11 +1,12 @@
 const cacheName = 'tgm-v1.0.0';
 const staticAssets = [
-  '../../index.html',
-  '../../manifest.webmanifest',
-  '../css/style.min.css',
-  './glide.min.js',
-  './index.js',
-  './movie-card.js'
+  './',
+  './index.html',
+  './manifest.webmanifest',
+  './assets/css/style.min.css',
+  './assets/js/glide.min.js',
+  './assets/js/index.js',
+  './assets/js/movie-card.js'
 ];
 
 // Cache static files
